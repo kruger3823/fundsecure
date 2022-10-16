@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link href="static/assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="static/assets/css/font-awesome.min.css" rel="stylesheet">
+    <link href="static/assets/css/style.css" rel="stylesheet">
+
+    <title>Educational Bootstrap 5 Login Page Website Tampalte</title>
+  </head>
+  <body background="static/assets/images/bg-01.jpg">
+  <a href="{% url 'user_logout' %}">Logout</a>
+  <br><br>
+  <a href="{% url 'apply1' %}">Apply for insurance</a>
+
+    <div class="card-body table-responsive p-0">
+                                      <table class="table table-hover text-nowrap">
+                                        <thead>
+
+                                          <tr>
+                                            <th></th>
+                                            <th>Number</th>
+                                            <th>Policy</th>
+                                            <th>Policy Details </th>
+                                            <th>Amount</th>
+
+
+                                          </tr>
+
+                                        </thead>
+                                        {% for s in insurance_view %}
+                                          <tr>
+                                            <td> {{s.address}}</td>
+                                            <td> {{s.insurancetype}}</td>
+                                            <td>{{s.company}}</td>
+                                            <td>{{s.policyDescription}}</td>
+                                            <td>{{s.timelength}}</td>
+
+                                          {% endfor %}
+
+                                          </tr>
+
+
+                                      </table>
+                                    </div>
+  </div>
+
+  </body>
+</html>

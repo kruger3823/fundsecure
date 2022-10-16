@@ -1,0 +1,18 @@
+{% extends 'index.html' %}
+{% block content %}
+
+
+<h3>THANK YOU FOR USING RISK ANALYSER</h3>
+
+<form action="" method="POST">
+    {% csrf_token %}
+    <table border="3">
+        <tr><td>Risk Level</td><td><b>{{Risk_level}}</b></td></tr>
+        <tr><td>Safety Score</td><td><b>{{Risk_percentage}}</b></td></tr>
+        <tr><td>Risk Factors</td><td><b>{{Risk_factors}}</b></td></tr>
+        <tr><td>Expert Opinion</td><td><b>{{Risk_opinion}}</b></td></tr>
+  
+</table>
+</form> 
+
+{% endblock %}

@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link href="static/assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="static/assets/css/font-awesome.min.css" rel="stylesheet">
+    <link href="static/assets/css/style.css" rel="stylesheet">
+
+    <title>Educational Bootstrap 5 Login Page Website Tampalte</title>
+  </head>
+  <body background="static/assets/images/bg-01.jpg">
+    <div class="topnav">
+      <a class="active" href="{% url 'index' %}">Home</a>
+      {% if user.is_authenticated %}
+      {% if user.is_superuser %}
+      <a href="{% url 'admin:index' %}">Admin</a>
+      {% endif %}
+      <a href="{% url 'password' %}">ChangePassword</a>
+      <a href="{% url 'user_logout' %}">Logout</a>
+      <a href="{% url 'dashboard' %}">Dashboard</a>
+      <a href="{% url 'fileupload' %}">fileupload</a>
+      <a href="{% url 'myfiles' %}">Files</a>{% else %}
+      <a href="{% url 'register' %}">Insurance Register</a>
+      <a href="{% url 'user_login' %}">Insurance Login</a>
+      <a href="{% url 'workersignup' %}">Customer Register</a>
+      <a href="{% url 'doctorlogin' %}">Customer Login</a>
+      {% endif %}
+    </div> 
+    <section class="form-02-main">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="_lk_de">
+              <div class="form-03-main">
+                <div class="logo">
+                  <img src="static/assets/images/user.png">
+                </div>
+                {% block content %}
+                <h1 align="center">Welcome</h1>
+              
+                {% endblock %}
+                
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

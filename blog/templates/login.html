@@ -1,0 +1,14 @@
+{% extends 'index.html' %}{% block content %}
+<h1 align="center">LOGIN</h1>
+<form action="{% url 'user_login' %}"  method="POST">
+    {% csrf_token %}
+    <div class="form-group">
+    <input type="text" class="form-control _ge_de_ol" name="username" placeholder="UserName" required>
+    </div>
+    <div class="form-group">
+    <input type="password" class="form-control _ge_de_ol" name="password" placeholder="PassWord" required>
+    </div>
+    <div class="form-group">
+    <input type="submit" class="form-center" value="LOGIN"></form>
+    </div>
+    {% endblock %}

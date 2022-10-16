@@ -1,0 +1,15 @@
+{% extends 'index.html' %}
+{% block title %}register
+<h1>REGISTER</h1>
+{% endblock %}{% block content %}
+
+{% if registered %}
+<h1>THANK YOU FOR REGISTERING</h1>
+{% else %}
+<form action="" method="POST">
+    {% csrf_token %}
+    {{user_form.as_p}}{{profile_form.as_p}}
+    <input type="submit" value="Register">
+</form> 
+{% endif %}
+{% endblock %}
